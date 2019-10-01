@@ -1,0 +1,3 @@
+<ExpressionA>::=<ExpressionB>{"|"<ExpressionB>}
+<ExpressionB>::=<ExpressionC>{<ExpressionC>}
+<ExpressionC>::="["<ExpressionA>"]"|"{"<ExpressionA>"}"|"("<ExpressionA>")"|"<"{<TerminateSymbol>}">"|"\""{<TerminateSymbol>}"\""|"\'"{<TerminateSymbol>}"\'"

@@ -1,0 +1,6 @@
+out/
+*.swp
+*.vswp
+in.txt
+out.txt
+err.txt
