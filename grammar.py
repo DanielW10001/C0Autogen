@@ -480,7 +480,7 @@ def test():
     sys.stderr = codecs.open(
         filename=SRCDIR + r'/err.txt', mode='w', encoding='utf-8')
 
-    global DOCDIR, GRAMMAR
+    global DOCDIR
     # Read Reduced C0 Grammar
     program_grammar = compile_grammar_file(DOCDIR + r'/autogen_grammar.txt')
     # Usage Here
