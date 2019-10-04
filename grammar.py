@@ -12,12 +12,11 @@ from abc import ABC, abstractmethod
 from collections import deque
 import codecs
 import sys
+import random
+import re
 
 __author__ = "Daniel (danielw10001@gmail.com)"
 __docformat__ = 'reStructuredText'
-
-# TODO (Daniel): Before 2019-10-01
-#     - Implemente Abstract Method
 
 GRAMMARTEXT: List[List[str]] = None
 """:var GRAMMARTEXT: Grammar str list list
@@ -97,14 +96,14 @@ class Expr(ABC):
         """
         return ExprA.generate(deque(expr_str))
 
-    # @abstractmethod
+    @abstractmethod
     def get_possibility_count(self) -> int:
         """Get possibility count of this expression"""
         pass
 
-    # @abstractmethod
+    @abstractmethod
     def get_random_instance(self) -> str:
-        """Get random instance of this expression"""
+        """Get random instance str of this expression"""
         pass
 
     def __str__(self) -> str:
@@ -149,6 +148,18 @@ class ExprA(Expr):
             exprA.child_list.append(ExprB.generate(exp_q))
         return exprA
 
+    def get_possibility_count(self) -> int:
+        """Get instance possibility count"""
+        possibility_count = 0
+        for child_expr in self.child_list:
+            # Add Principle
+            possibility_count += child_expr.get_possibility_count()
+        return possibility_count
+
+    def get_random_instance(self) -> str:
+        """Get random instance str"""
+        return random.choice(self.child_list).get_random_instance()
+
 
 class ExprB(Expr):
     """ExpressionB"""
@@ -176,6 +187,21 @@ class ExprB(Expr):
         ):
             exprB.child_list.append(ExprC.generate(exp_q))
         return exprB
+
+    def get_possibility_count(self) -> int:
+        """Get instance possibility count"""
+        possibility_count = 1
+        for child_expr in self.child_list:
+            # Multiply Principle
+            possibility_count *= child_expr.get_possibility_count()
+        return possibility_count
+
+    def get_random_instance(self) -> str:
+        """Get random instance str"""
+        instance_str = ''
+        for child_expr in self.child_list:
+            instance_str += child_expr.get_random_instance()
+        return instance_str
 
 
 class ExprC(Expr):
@@ -229,6 +255,15 @@ class ExprCSB(ExprC):
         else:
             raise SyntaxError(f"Unknow Token: {exp_q[0]}")
 
+    def get_possibility_count(self) -> int:
+        """Get instance possibility count"""
+        # Empty or SupExpression
+        return 1 + self.child_list[0].get_possibility_count()
+
+    def get_random_instance(self) -> str:
+        """Get random instance str"""
+        return random.choice([self.child_list[0].get_random_instance(), ''])
+
 
 class ExprCCB(ExprC):
     """ExpressionC with Curly Bracket"""
@@ -252,6 +287,22 @@ class ExprCCB(ExprC):
                 raise SyntaxError(f"Unknow Token: {exp_q[0]}")
         else:
             raise SyntaxError(f"Unknow Token: {exp_q[0]}")
+
+    def get_possibility_count(self) -> int:
+        """Get instance possibility count"""
+        supexpr_possibility_count = self.child_list[0].get_possibility_count()
+        # Only consider {0, 2}
+        # Empty or SupExpr or SupExpr SupExpr
+        return 1 + supexpr_possibility_count + supexpr_possibility_count ** 2
+
+    def get_random_instance(self) -> str:
+        """Get random instance str"""
+        return random.choice([
+            lambda expr: '',  # Empty
+            lambda expr: expr.get_random_instance(),  # SupExpr
+            lambda expr: expr.get_random_instance() +  # SupExpr SupExpr
+            expr.get_random_instance()
+        ])(self.child_list[0])
 
 
 class ExprCRB(ExprC):
@@ -277,6 +328,14 @@ class ExprCRB(ExprC):
         else:
             raise SyntaxError(f"Unknow Token: {exp_q[0]}")
 
+    def get_possibility_count(self) -> int:
+        """Get instance possibility count"""
+        return self.child_list[0].get_possibility_count()
+
+    def get_random_instance(self) -> str:
+        """Get random instance str"""
+        return self.child_list[0].get_random_instance()
+
 
 class ExprCAB(ExprC):
     """ExpressionC with Angle Bracket"""
@@ -297,7 +356,12 @@ class ExprCAB(ExprC):
             while len(exp_q) > 0 and exp_q[0] != '>':
                 if exp_q[0] == '\\':  # Trans meanning
                     exp_q.popleft()
-                    identifier_str += exp_q.popleft()
+                    if re.fullmatch(r'\w', exp_q[0]):
+                        # Control Escape: \a, \b, \c, ...
+                        identifier_str += eval('\'\\' + exp_q.popleft() + '\'')
+                    else:
+                        # Literal Escape: \\, \<, \>, \', \", ...
+                        identifier_str += exp_q.popleft()
                 else:
                     # exp_q[0] != '>' and exp_q[0] != '\\'
                     identifier_str += exp_q.popleft()
@@ -320,6 +384,14 @@ class ExprCAB(ExprC):
         """Override Expr.__str__ with Nonrecursive one"""
         return '<' + self.identifier_str + '>'
 
+    def get_possibility_count(self) -> int:
+        """Get instance possibility count"""
+        return self.child_list[0].get_possibility_count()
+
+    def get_random_instance(self) -> str:
+        """Get random instance str"""
+        return self.child_list[0].get_random_instance()
+
 
 class ExprCQ(ExprC):
     """ExpressionC with Quotation"""
@@ -340,7 +412,12 @@ class ExprCQ(ExprC):
             while len(exp_q) > 0 and exp_q[0] != operator:
                 if exp_q[0] == '\\':  # Trans meanning
                     exp_q.popleft()
-                    content += exp_q.popleft()
+                    if re.fullmatch(r'\w', exp_q[0]):
+                        # Control Escape: \a, \b, \c, ...
+                        content += eval('\'\\' + exp_q.popleft() + '\'')
+                    else:
+                        # Literal Escape: \\, \<, \>, \', \", ...
+                        content += exp_q.popleft()
                 else:
                     # exp_q[0] != '\'' and exp_q[0] != '\"'\
                     #     and exp_q[0] != '\\'
@@ -354,6 +431,14 @@ class ExprCQ(ExprC):
                 raise SyntaxError(f"Unknow Token: {exp_q[0]}")
         else:
             raise SyntaxError(f"Unknow Token: {exp_q[0]}")
+
+    def get_possibility_count(self) -> int:
+        """Get possibility count"""
+        return 1
+
+    def get_random_instance(self) -> str:
+        """Get random instance str"""
+        return self.child_list[0]
 
 
 class SyntaxError(Exception):
@@ -389,8 +474,13 @@ def test():
 
     global DOCDIR
     # Read Reduced C0 Grammar
-    program_grammar = compile_grammar_file(DOCDIR + r'/grammar.txt')
-    print(program_grammar.get_grammar_tree())
+    program_grammar = compile_grammar_file(DOCDIR + r'/autogen_grammar.txt')
+    # Usage Here
+    # Example:
+    # print(program_grammar)
+    # print(program_grammar.get_grammar_tree())
+    # print(program_grammar.get_possibility_count())
+    # print(program_grammar.get_random_instance())
 
 
 if __name__ == '__main__':
