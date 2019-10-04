@@ -68,7 +68,7 @@ class Expr(ABC):
         :param identifier: Expression Identifier
         """
         global GRAMMARTEXT, GRAMMAR, INVOKETRACE
-        if identifier in INVOKETRACE:
+        if INVOKETRACE.count(identifier) > 10:
             # Loop Invoke: ExprCAB <Identifier> -> ExprCQ "Identifier"
             return cls.generate_with_expr_str("\"" + identifier + "\"")
         else:
