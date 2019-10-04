@@ -38,7 +38,7 @@ GRAMMAR = {}
     Identifier: Expression
 }
 """
-MAX_LOOP_INVOKE_NUMBER: int = 10
+MAX_LOOP_INVOKE_NUMBER: int = 3
 """Max loop invoke number"""
 INVOKETRACE: List[str] = []
 """Invoke Tace of Grammar Tree Construction
@@ -84,8 +84,13 @@ class Expr(ABC):
                     if '<' + identifier + '>' == grammar_str[0]:
                         # Construct Item
                         expr = cls.generate_with_expr_str(grammar_str[1])
-                # Add item to GRAMMAR
-                GRAMMAR[identifier] = expr
+                if len(INVOKETRACE) != len(set(INVOKETRACE)):
+                    # Nested Invoked
+                    pass
+                else:
+                    # Not Nested
+                    # Add item to GRAMMAR
+                    GRAMMAR[identifier] = expr
                 # Unlog Trace
                 INVOKETRACE.pop()
                 return expr
@@ -114,7 +119,8 @@ class Expr(ABC):
         for child in self.child_list:
             # Recursive
             repr_str += str(child) + ',\n'
-        repr_str += ']\n'
+        repr_str = repr_str[:-2]
+        repr_str += '\n]}'
         return repr_str
 
     def get_grammar_tree(self) -> str:
@@ -474,7 +480,7 @@ def test():
     sys.stderr = codecs.open(
         filename=SRCDIR + r'/err.txt', mode='w', encoding='utf-8')
 
-    global DOCDIR
+    global DOCDIR, GRAMMAR
     # Read Reduced C0 Grammar
     program_grammar = compile_grammar_file(DOCDIR + r'/autogen_grammar.txt')
     # Usage Here
