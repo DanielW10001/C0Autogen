@@ -13,6 +13,7 @@ BUAA Dept.6 SCSE
 - Dependency: Python 3.5+
 - Create `in.txt`, `out.txt`, `err.txt` under project dir
 - `py grammar.py`
+    - `MAX_LOOP_INVOKE_NUMBER`: Control max loop invoke number
     - `str(Expr)`: Get Grammar Representation
     - `Expr.get_grammar_tree()`: Get Grammar Tree
     - `Expr.get_possibility_count()`: Get Possibility Count

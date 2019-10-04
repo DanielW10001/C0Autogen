@@ -38,6 +38,8 @@ GRAMMAR = {}
     Identifier: Expression
 }
 """
+MAX_LOOP_INVOKE_NUMBER: int = 10
+"""Max loop invoke number"""
 INVOKETRACE: List[str] = []
 """Invoke Tace of Grammar Tree Construction
 
@@ -68,8 +70,8 @@ class Expr(ABC):
         :param identifier: Expression Identifier
         """
         global GRAMMARTEXT, GRAMMAR, INVOKETRACE
-        if INVOKETRACE.count(identifier) > 10:
-            # Loop Invoke: ExprCAB <Identifier> -> ExprCQ "Identifier"
+        if INVOKETRACE.count(identifier) > MAX_LOOP_INVOKE_NUMBER:
+            # Loop Invoke Exceed: ExprCAB <Identifier> -> ExprCQ "Identifier"
             return cls.generate_with_expr_str("\"" + identifier + "\"")
         else:
             if identifier in GRAMMAR:
