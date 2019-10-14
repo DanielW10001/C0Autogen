@@ -6,6 +6,8 @@ For BUAA Compiler Course
 Daniel (danielw10001@gmail.com)
 BUAA Dept.6 SCSE
 
+Licensed under `LICENSE.md`
+
 [TOC]
 
 ## 1. Usage
