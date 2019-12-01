@@ -1,4 +1,6 @@
-### GNU GENERAL PUBLIC LICENSE
+Copyright (c) 2019 Daniel (danielw10001@gmail.com)
+
+### 1. GNU GENERAL PUBLIC LICENSE
 
 Version 3, 29 June 2007
 
@@ -8,7 +10,7 @@ Copyright (C) 2007 Free Software Foundation, Inc.
 Everyone is permitted to copy and distribute verbatim copies of this
 license document, but changing it is not allowed.
 
-### Preamble
+### 2. Preamble
 
 The GNU General Public License is a free, copyleft license for
 software and other kinds of works.
@@ -73,9 +75,9 @@ assures that patents cannot be used to render the program non-free.
 The precise terms and conditions for copying, distribution and
 modification follow.
 
-### TERMS AND CONDITIONS
+### 3. TERMS AND CONDITIONS
 
-#### 0. Definitions.
+#### 3.1. Definitions.
 
 "This License" refers to version 3 of the GNU General Public License.
 
@@ -115,7 +117,7 @@ work under this License, and how to view a copy of this License. If
 the interface presents a list of user commands or options, such as a
 menu, a prominent item in the list meets this criterion.
 
-#### 1. Source Code.
+#### 3.2. Source Code.
 
 The "source code" for a work means the preferred form of the work for
 making modifications to it. "Object code" means any non-source form of
@@ -156,7 +158,7 @@ regenerate automatically from other parts of the Corresponding Source.
 The Corresponding Source for a work in source code form is that same
 work.
 
-#### 2. Basic Permissions.
+#### 3.3. Basic Permissions.
 
 All rights granted under this License are granted for the term of
 copyright on the Program, and are irrevocable provided the stated
@@ -181,7 +183,7 @@ Conveying under any other circumstances is permitted solely under the
 conditions stated below. Sublicensing is not allowed; section 10 makes
 it unnecessary.
 
-#### 3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+#### 3.4. Protecting Users' Legal Rights From Anti-Circumvention Law.
 
 No covered work shall be deemed part of an effective technological
 measure under any applicable law fulfilling obligations under article
@@ -197,7 +199,7 @@ operation or modification of the work as a means of enforcing, against
 the work's users, your or third parties' legal rights to forbid
 circumvention of technological measures.
 
-#### 4. Conveying Verbatim Copies.
+#### 3.5. Conveying Verbatim Copies.
 
 You may convey verbatim copies of the Program's source code as you
 receive it, in any medium, provided that you conspicuously and
@@ -210,7 +212,7 @@ recipients a copy of this License along with the Program.
 You may charge any price or no price for each copy that you convey,
 and you may offer support or warranty protection for a fee.
 
-#### 5. Conveying Modified Source Versions.
+#### 3.6. Conveying Modified Source Versions.
 
 You may convey a work based on the Program, or the modifications to
 produce it from the Program, in the form of source code under the
@@ -245,7 +247,7 @@ beyond what the individual works permit. Inclusion of a covered work
 in an aggregate does not cause this License to apply to the other
 parts of the aggregate.
 
-#### 6. Conveying Non-Source Forms.
+#### 3.7. Conveying Non-Source Forms.
 
 You may convey a covered work in object code form under the terms of
 sections 4 and 5, provided that you also convey the machine-readable
@@ -341,7 +343,7 @@ documented (and with an implementation available to the public in
 source code form), and must require no special password or key for
 unpacking, reading or copying.
 
-#### 7. Additional Terms.
+#### 3.8. Additional Terms.
 
 "Additional permissions" are terms that supplement the terms of this
 License by making exceptions from one or more of its conditions.
@@ -400,7 +402,7 @@ Additional terms, permissive or non-permissive, may be stated in the
 form of a separately written license, or stated as exceptions; the
 above requirements apply either way.
 
-#### 8. Termination.
+#### 3.9. Termination.
 
 You may not propagate or modify a covered work except as expressly
 provided under this License. Any attempt otherwise to propagate or
@@ -428,7 +430,7 @@ this License. If your rights have been terminated and not permanently
 reinstated, you do not qualify to receive new licenses for the same
 material under section 10.
 
-#### 9. Acceptance Not Required for Having Copies.
+#### 3.10. Acceptance Not Required for Having Copies.
 
 You are not required to accept this License in order to receive or run
 a copy of the Program. Ancillary propagation of a covered work
@@ -439,7 +441,7 @@ modify any covered work. These actions infringe copyright if you do
 not accept this License. Therefore, by modifying or propagating a
 covered work, you indicate your acceptance of this License to do so.
 
-#### 10. Automatic Licensing of Downstream Recipients.
+#### 3.11. Automatic Licensing of Downstream Recipients.
 
 Each time you convey a covered work, the recipient automatically
 receives a license from the original licensors, to run, modify and
@@ -464,7 +466,7 @@ rights granted under this License, and you may not initiate litigation
 any patent claim is infringed by making, using, selling, offering for
 sale, or importing the Program or any portion of it.
 
-#### 11. Patents.
+#### 3.12. Patents.
 
 A "contributor" is a copyright holder who authorizes use under this
 License of the Program or a work on which the Program is based. The
@@ -533,7 +535,7 @@ Nothing in this License shall be construed as excluding or limiting
 any implied license or other defenses to infringement that may
 otherwise be available to you under applicable patent law.
 
-#### 12. No Surrender of Others' Freedom.
+#### 3.13. No Surrender of Others' Freedom.
 
 If conditions are imposed on you (whether by court order, agreement or
 otherwise) that contradict the conditions of this License, they do not
@@ -546,7 +548,7 @@ from those to whom you convey the Program, the only way you could
 satisfy both those terms and this License would be to refrain entirely
 from conveying the Program.
 
-#### 13. Use with the GNU Affero General Public License.
+#### 3.14. Use with the GNU Affero General Public License.
 
 Notwithstanding any other provision of this License, you have
 permission to link or combine any covered work with a work licensed
@@ -557,7 +559,7 @@ but the special requirements of the GNU Affero General Public License,
 section 13, concerning interaction through a network will apply to the
 combination as such.
 
-#### 14. Revised Versions of this License.
+#### 3.15. Revised Versions of this License.
 
 The Free Software Foundation may publish revised and/or new versions
 of the GNU General Public License from time to time. Such new versions
@@ -583,7 +585,7 @@ permissions. However, no additional obligations are imposed on any
 author or copyright holder as a result of your choosing to follow a
 later version.
 
-#### 15. Disclaimer of Warranty.
+#### 3.16. Disclaimer of Warranty.
 
 THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
 APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
@@ -595,7 +597,7 @@ PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE
 DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR
 CORRECTION.
 
-#### 16. Limitation of Liability.
+#### 3.17. Limitation of Liability.
 
 IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
 WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR
@@ -607,7 +609,7 @@ LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM
 TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER
 PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
-#### 17. Interpretation of Sections 15 and 16.
+#### 3.18. Interpretation of Sections 15 and 16.
 
 If the disclaimer of warranty and limitation of liability provided
 above cannot be given local legal effect according to their terms,
@@ -618,7 +620,7 @@ copy of the Program in return for a fee.
 
 END OF TERMS AND CONDITIONS
 
-### How to Apply These Terms to Your New Programs
+### 4. How to Apply These Terms to Your New Programs
 
 If you develop a new program, and you want it to be of the greatest
 possible use to the public, the best way to achieve this is to make it
@@ -673,3 +675,77 @@ library, you may consider it more useful to permit linking proprietary
 applications with the library. If this is what you want to do, use the
 GNU Lesser General Public License instead of this License. But first,
 please read <https://www.gnu.org/licenses/why-not-lgpl.html>.
+
+----
+
+反996许可证版本1.0
+
+在符合下列条件的情况下，
+特此免费向任何得到本授权作品的副本（包括源代码、文件和/或相关内容，以下统称为“授权作品”
+）的个人和法人实体授权：被授权个人或法人实体有权以任何目的处置授权作品，包括但不限于使
+用、复制，修改，衍生利用、散布，发布和再许可：
+
+
+1.	个人或法人实体必须在许可作品的每个再散布或衍生副本上包含以上版权声明和本许可证，不
+    得自行修改。
+2.	个人或法人实体必须严格遵守与个人实际所在地或个人出生地或归化地、或法人实体注册地或
+    经营地（以较严格者为准）的司法管辖区所有适用的与劳动和就业相关法律、法规、规则和
+    标准。如果该司法管辖区没有此类法律、法规、规章和标准或其法律、法规、规章和标准不可
+    执行，则个人或法人实体必须遵守国际劳工标准的核心公约。
+3.	个人或法人不得以任何方式诱导或强迫其全职或兼职员工或其独立承包人以口头或书面形式同
+    意直接或间接限制、削弱或放弃其所拥有的，受相关与劳动和就业有关的法律、法规、规则和
+    标准保护的权利或补救措施，无论该等书面或口头协议是否被该司法管辖区的法律所承认，该
+    等个人或法人实体也不得以任何方法限制其雇员或独立承包人向版权持有人或监督许可证合规
+    情况的有关当局报告或投诉上述违反许可证的行为的权利。
+
+该授权作品是"按原样"提供，不做任何明示或暗示的保证，包括但不限于对适销性、特定用途适用
+性和非侵权性的保证。在任何情况下，无论是在合同诉讼、侵权诉讼或其他诉讼中，版权持有人均
+不承担因本软件或本软件的使用或其他交易而产生、引起或与之相关的任何索赔、损害或其他责任。
+
+
+------------------------- ENGLISH ------------------------------
+
+
+Anti 996 License Version 1.0 (Draft)
+
+Permission is hereby granted to any individual or legal entity obtaining a copy
+of this licensed work (including the source code, documentation and/or related
+items, hereinafter collectively referred to as the "licensed work"), free of
+charge, to deal with the licensed work for any purpose, including without
+limitation, the rights to use, reproduce, modify, prepare derivative works of,
+publish, distribute and sublicense the licensed work, subject to the following
+conditions:
+
+1.  The individual or the legal entity must conspicuously display, without
+    modification, this License on each redistributed or derivative copy of the
+    Licensed Work.
+
+2.  The individual or the legal entity must strictly comply with all applicable
+    laws, regulations, rules and standards of the jurisdiction relating to
+    labor and employment where the individual is physically located or where
+    the individual was born or naturalized; or where the legal entity is
+    registered or is operating (whichever is stricter). In case that the
+    jurisdiction has no such laws, regulations, rules and standards or its
+    laws, regulations, rules and standards are unenforceable, the individual
+    or the legal entity are required to comply with Core International Labor
+    Standards.
+
+3.  The individual or the legal entity shall not induce or force its
+    employee(s), whether full-time or part-time, or its independent
+    contractor(s), in any methods, to agree in oral or written form,
+    to directly or indirectly restrict, weaken or relinquish his or
+    her rights or remedies under such laws, regulations, rules and
+    standards relating to labor and employment as mentioned above,
+    no matter whether such written or oral agreement are enforceable
+    under the laws of the said jurisdiction, nor shall such individual
+    or the legal entity limit, in any methods, the rights of its employee(s)
+    or independent contractor(s) from reporting or complaining to the copyright
+    holder or relevant authorities monitoring the compliance of the license
+    about its violation(s) of the said license.
+
+THE LICENSED WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN ANY WAY CONNECTION
+WITH THE LICENSED WORK OR THE USE OR OTHER DEALINGS IN THE LICENSED WORK.
